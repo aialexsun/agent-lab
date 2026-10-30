@@ -1,0 +1,23 @@
+{
+  "home_currency": "RSD",
+  "target_currency": "USD",
+  "rate": 105.4998,
+  "months": 1,
+  "total_by_month": {
+    "2026-10": 161690.0
+  },
+  "average_per_month": {
+    "by_category": {
+      "rent": 100000.0,
+      "food": 10190.0,
+      "transport": 4000.0,
+      "clothes": 10000.0,
+      "hobbies": 14000.0,
+      "health": 15000.0,
+      "subscriptions": 3500.0,
+      "leisure": 5000.0
+    },
+    "total": 161690.0,
+    "total_in_target_currency": 1532.61
+  }
+}
