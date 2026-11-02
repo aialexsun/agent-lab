@@ -7,7 +7,9 @@ authors = [
     { name = "Aleksandr Suntsov", email = "347580522+aialexsun@users.noreply.github.com" }
 ]
 requires-python = ">=3.15"
-dependencies = []
+dependencies = [
+    "requests>=2.34.2",
+]
 
 [project.scripts]
 agent-lab = "agent_lab:main"
