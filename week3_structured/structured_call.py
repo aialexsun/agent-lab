@@ -34,7 +34,7 @@ def ask_rfp(question):
         )
         text = response.choices[0].message.content
         try:
-            return RfpAnswer.model_validate_json(text), response.usage
+            return RfpAnswer.model_validate_json(text), response.usage.prompt_tokens, response.usage.completion_tokens
         except ValidationError as e:
             print(f"Attempt {attempt + 1} invalid, retrying...")
             print(" Finish reason:", response.choices[0].finish_reason)
@@ -48,16 +48,16 @@ def ask_rfp(question):
 
 def main():
     question = input("RFP question: ")
-    result, usage = ask_rfp(question)
-    print("\nANSWER:\n" + result.answer)
-    print(f"\nCONFIDENCE: {result.confidence:.0%}")
+    result, tokens_in, tokens_out = ask_rfp(question)
+    print("ANSWER:" + result.answer)
+    print(f"CONFIDENCE: {result.confidence:.0%}")
     print("ASSUMPTIONS:")
     for item in result.assumptions:
         print(" -", item)
     print("RISKS:")
     for item in result.risks:
         print(" -", item)
-    print(f"\nTokens: {usage.prompt_tokens} in, {usage.completion_tokens} out")
+    print(f"Tokens: {tokens_in} in, {tokens_out} out")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,83 @@
+[
+  {
+    "question": "Describe your approach to disaster recovery for a managed PostgreSQL database?",
+    "answer": "For managed PostgreSQL disaster recovery, we implement continuous backups with point-in-time recovery capabilities using AWS RDS or similar services. Multi-region replication ensures low-latency failover during regional outages, while automated testing validates recovery time objectives quarterly. This approach minimizes data loss and maintains service continuity through robust, tested recovery processes.",
+    "confidence": 0.92,
+    "assumptions": [
+      "managed service provides native replication",
+      "business continuity requirements define RTO/RPO"
+    ],
+    "risks": [
+      "geographic latency during failover",
+      "untested recovery scenarios"
+    ],
+    "tokens_in": 189,
+    "tokens_out": 1290,
+    "seconds": 45.0
+  },
+  {
+    "question": "How do you ensure data is encrypted at rest and in transit?",
+    "answer": "We enforce encryption at rest using AWS KMS for storage and AES-256 for databases. In transit, TLS 1.3 is enforced via API gateways and mutual TLS for client-server communication. Key rotation occurs quarterly with automated compliance checks. This meets GDPR and HIPAA standards.",
+    "confidence": 0.92,
+    "assumptions": [
+      "customer uses cloud platforms like AWS",
+      "compliance requirements include GDPR and HIPAA"
+    ],
+    "risks": [
+      "legacy systems with outdated encryption protocols",
+      "key rotation failures during critical audits"
+    ],
+    "tokens_in": 190,
+    "tokens_out": 1328,
+    "seconds": 69.7
+  },
+  {
+    "question": "What is your SLA for managed Kubernetes, and what happens if it is breached?",
+    "answer": "Our managed Kubernetes service guarantees 99.95% uptime SLA. Upon breach, customers receive a 10% monthly fee credit and a dedicated technical review within 48 hours. This SLA excludes planned maintenance and third-party infrastructure failures.",
+    "confidence": 0.95,
+    "assumptions": [
+      "Standard business hours",
+      "No major infrastructure failures"
+    ],
+    "risks": [
+      "Third-party provider outages",
+      "Customer misconfiguration"
+    ],
+    "tokens_in": 194,
+    "tokens_out": 1399,
+    "seconds": 78.6
+  },
+  {
+    "question": "What services do you have that provide some form of protected connection between a cloud and our own datacenter?",
+    "answer": "We provide AWS Direct Connect and Azure ExpressRoute to establish secure, dedicated connections between your datacenter and cloud environments. These services ensure low-latency, high-bandwidth links with end-to-end encryption and strict network segmentation. They integrate seamlessly with existing infrastructure while offering scalable bandwidth and robust monitoring capabilities. This approach minimizes security risks and ensures compliance with enterprise standards.",
+    "confidence": 0.85,
+    "assumptions": [
+      "Customer uses AWS or Azure cloud platforms",
+      "Customer requires dedicated, low-latency connections"
+    ],
+    "risks": [
+      "Network misconfiguration during deployment",
+      "Service interruptions during peak traffic"
+    ],
+    "tokens_in": 198,
+    "tokens_out": 1183,
+    "seconds": 81.3
+  },
+  {
+    "question": "How can we optimize our cloud resources usage?",
+    "answer": "Optimize cloud resources by implementing automated scaling policies to dynamically adjust compute instances based on real-time demand. Use cost-optimization tools to identify and terminate underutilized resources, and leverage reserved instances or spot pricing for predictable workloads. Regularly review resource usage patterns with monitoring tools to spot inefficiencies and apply right-sizing adjustments. Ensure infrastructure as code (IaC) practices are enforced to maintain consistent, efficient configurations across environments.",
+    "confidence": 0.85,
+    "assumptions": [
+      "Current infrastructure uses IaC",
+      "Workloads are predictable",
+      "Cost monitoring tools are in place"
+    ],
+    "risks": [
+      "Security implications from automated scaling",
+      "Complexity in right-sizing during peak demand"
+    ],
+    "tokens_in": 186,
+    "tokens_out": 1441,
+    "seconds": 90.8
+  }
+]

@@ -1,0 +1,6 @@
+# Generic RFP questions for testing
+Describe your approach to disaster recovery for a managed PostgreSQL database?
+How do you ensure data is encrypted at rest and in transit?
+What is your SLA for managed Kubernetes, and what happens if it is breached?
+What services do you have that provide some form of protected connection between a cloud and our own datacenter?
+How can we optimize our cloud resources usage?
