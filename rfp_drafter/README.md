@@ -11,9 +11,12 @@ validated with Pydantic.
 4. Saves everything to 'answers.json' with tokens and timing
 
 ## Run
+```powershell
 uv run python -m rfp_drafter.rfp
+```
 
 ## Example output
+```json
   {
     "question": "Describe your approach to disaster recovery for a managed PostgreSQL database?",
     "answer": "Our approach to disaster recovery for managed PostgreSQL includes regular automated backups using WAL-G for point-in-time recovery, geographic replication for cross-region failover, and failover automation via cloud-native tools. We prioritize testing restore procedures and maintaining redundant, versioned backups in secure storage. Monitoring and alerting ensure timely detection of issues, while a documented DR plan ensures alignment with business continuity requirements.",
@@ -34,11 +37,13 @@ uv run python -m rfp_drafter.rfp
     "tokens_out": 629,
     "seconds": 29.3
   }
+```
 
 ## Results
-|  Model   | Valid answers | Avg time per answer | Avg tokens per answer |
-| qwen3:4b |      5/5      |        73 s         |         1328          |
-| qwen3:8b |      5/5      |        20 s         |          448          |
+| Model | Valid answers | Avg time per answer | Avg tokens per answer |
+|:-:|:-:|:-:|:-:|
+| qwen3:8b | 5/5 | 20 s | 448 |
+| qwen3:4b | 5/5 | 73 s | 1328 |
 
 ## Limitations
 - Generic questions only; answers need expert review
