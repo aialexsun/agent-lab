@@ -1,0 +1,8 @@
+service,size,price_usd_month
+vm,small,15
+vm,medium,35
+vm,large,70
+postgres,small,25
+postgres,medium,60
+storage_gb,standard,0.05
+load_balancer,standard,18
