@@ -90,8 +90,8 @@ tools = [
                 "type": "object",
                 "properties": {
                     "amount":   {"type": "number", "description": "Amount of currency to convert from"},
-                    "from_cur":   {"type": "string", "description": "Currency to convert from, ISO code, e.g. USD, RUB, EUR"},
-                    "to_cur": {"type": "string", "description": "Currency to express the price in (the answer's currency), ISO code, e.g. USD, RUB, EUR"},
+                    "from_cur":   {"type": "string", "description": "Currency to convert from, ISO code, e.g. USD, KZT, EUR"},
+                    "to_cur": {"type": "string", "description": "Currency to express the price in (the answer's currency), ISO code, e.g. USD, KZT, EUR"},
                 },
                 "required": ["amount", "from_cur", "to_cur"],
             },
@@ -142,4 +142,6 @@ def run_agent(question):
     return None
 
 if __name__ == "__main__":
-    run_agent("Estimate 1 TB of storage in RUB")
+    question = input("You: ")
+    run_agent(question)
+    #run_agent("What is the cost of 3 medium VM-s and 1 TB of storage in EUR?")

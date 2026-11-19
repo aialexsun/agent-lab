@@ -40,11 +40,13 @@ tools = [{
     },
 }]
 
+question = input("You: ")
 
 # messages = [{"role": "user", "content": "What is the capital of France?"}]
 messages = [
     {"role": "system", "content": "You are a helpful assistant. Use a tool only when it is needed; otherwise answer from your own knowledge."},
-    {"role": "user", "content": "What is the capital of France?"},
+    {"role": "user", "content": question},
+    #{"role": "user", "content": "What is the capital of France?"},
 ]
 
 response = client.chat.completions.create(model=MODEL, messages=messages, tools=tools)
