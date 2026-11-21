@@ -1,0 +1,7 @@
+service,size,usd_per_month
+vm,small,30
+vm,medium,60
+vm,large,120
+postgres,small,50
+postgres,medium,110
+storage,100gb,5
