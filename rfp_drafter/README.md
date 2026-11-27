@@ -16,28 +16,22 @@ uv run python -m rfp_drafter.rfp
 ```
 
 ## Example output
-```json
-  {
-    "question": "Describe your approach to disaster recovery for a managed PostgreSQL database?",
-    "answer": "Our approach to disaster recovery for managed PostgreSQL includes regular automated backups using WAL-G for point-in-time recovery, geographic replication for cross-region failover, and failover automation via cloud-native tools. We prioritize testing restore procedures and maintaining redundant, versioned backups in secure storage. Monitoring and alerting ensure timely detection of issues, while a documented DR plan ensures alignment with business continuity requirements.",
-    "confidence": 0.92,
-    "assumptions": [
-      "Managed PostgreSQL service provides backup infrastructure",
-      "User has configured retention policies and storage locations",
-      "Replication and failover tools are supported by the cloud platform",
-      "Disaster scenarios align with standard RTO/RPO targets"
-    ],
-    "risks": [
-      "Backup corruption or incomplete backups may render data unrecoverable",
-      "Network latency could delay failover during regional outages",
-      "Untested DR plans may fail under real-world conditions",
-      "Dependence on cloud provider-specific tools may limit flexibility"
-    ],
-    "tokens_in": 110,
-    "tokens_out": 629,
-    "seconds": 29.3
-  }
-```
+Loaded 5 questions
+
+[1/5] Describe your approach to disaster recovery for a managed PostgreSQL database?
+    OK in 33 s, 497 tokens out, confidence 90%
+
+[2/5] How do you ensure data is encrypted at rest and in transit?
+    OK in 25 s, 395 tokens out, confidence 95%
+
+[3/5] What is your SLA for managed Kubernetes, and what happens if it is breached?
+    OK in 26 s, 433 tokens out, confidence 95%
+
+[4/5] What services do you have that provide some form of protected connection between a cloud and our own datacenter?
+    OK in 33 s, 483 tokens out, confidence 95%
+
+[5/5] How can we optimize our cloud resources usage?
+    OK in 21 s, 364 tokens out, confidence 80%
 
 ## Results
 | Model | Valid answers | Avg time per answer | Avg tokens per answer |

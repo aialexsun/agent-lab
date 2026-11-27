@@ -1,9 +1,10 @@
+import time
 from openai import APIConnectionError
 from config import client, MODEL, cost_usd
 
 messages = [{"role": "system", "content": "You are a helpful cloud presales architect."}]
 total_cost = 0.0
-
+start = time.perf_counter()
 while True:
     user_text = input("You: ")
     if user_text.lower() in ("exit", "quit"):
@@ -13,12 +14,14 @@ while True:
     messages.append({"role": "user", "content": user_text})
 
     try:
+        
         stream = client.chat.completions.create(
             model=MODEL,
             messages=messages,
             stream=True,
             stream_options={"include_usage": True},
         )
+        seconds = time.perf_counter() - start
         print("AI: ", end="")
         full_answer = ""
         usage = None
@@ -40,4 +43,5 @@ while True:
         total_cost += cost_usd(usage)
         print(f"[this turn: {usage.prompt_tokens} in + {usage.completion_tokens} out tokens | "
               f"conversation cost so far: ${total_cost:.6f}]")
+        print(f"Answered in {seconds:.1f} s, {usage.completion_tokens / seconds:.1f} tokens/s")
     print()
